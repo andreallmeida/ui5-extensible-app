@@ -1,9 +1,12 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"ovly/extensible/controller/BaseController",
+	"ovly/extensible/model/formatter"
+], function (Controller, formatter) {
 	"use strict";
 
 	return Controller.extend("ovly.extensible.controller.S1", {
+
+		meuFormatador: formatter,
 
 		onInit: function () {
 
@@ -19,7 +22,7 @@ sap.ui.define([
 				id: sProductId
 			});
 		}
-
+		
 	});
 
 });

@@ -1,5 +1,5 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
+	"ovly/extensible/controller/BaseController"
 ], function (Controller) {
 	"use strict";
 

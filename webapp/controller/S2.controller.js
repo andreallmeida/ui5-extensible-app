@@ -1,25 +1,28 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/json/JSONModel"
-], function (Controller, JSONModel) {
+	"ovly/extensible/controller/BaseController",
+	"sap/ui/model/json/JSONModel",
+	"ovly/extensible/model/formatter"
+], function (Controller, JSONModel, formatter) {
 	"use strict";
 
 	return Controller.extend("ovly.extensible.controller.S2", {
+		
+		formatter: formatter,
 
 		onInit: function () {
 			var oRouter = this.getOwnerComponent().getRouter();
 			var oRoute = oRouter.getRoute("detail");
 			oRoute.attachPatternMatched(this.onPatternMatched, this);
-			
+
 			var oI18NModel = this.getOwnerComponent().getModel("i18n");
 			var sTitle = oI18NModel.getResourceBundle().getText("s2_title");
-			
+
 			var oViewModel = new JSONModel({
 				busy: false,
 				title: sTitle
 			});
-			
-			this.getView().setModel(oViewModel, "view"); 
+
+			this.getView().setModel(oViewModel, "view");
 
 		},
 
@@ -62,7 +65,7 @@ sap.ui.define([
 			var oContext = this.getView().getBindingContext();
 			var sProductId = oContext.getProperty("Id");
 			var sTitle = oI18NModel.getResourceBundle().getText("s2_title", [sProductId]);
-			
+
 			var oViewModel = this.getView().getModel("view");
 			oViewModel.setProperty("/title", sTitle);
 		}

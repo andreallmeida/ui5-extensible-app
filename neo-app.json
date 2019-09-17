@@ -45,7 +45,7 @@
       "path": "/sap/",
       "target": {
         "type": "destination",
-        "name": "OVLY_S4",
+        "name": "OVLY_S4_1809",
         "entryPath": "/sap/"
       },
       "description": "OVLY - S4 1809"

@@ -2,7 +2,8 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{view>/title}" showNavButton="true" navButtonPress="onBack">
 		<content>
-			<ObjectHeader icon="{ImageUrl}" intro="{Id}" title="{Name}" number="{Price}" numberUnit="U$"/>
+			<ObjectHeader icon="{ImageUrl}" intro="{Id}" title="{path: 'Name', formatter: '.formatter.toUpperCase'}" number="{Price}" numberUnit="U$"/>
+			
 			<core:ExtensionPoint name="extContentAfterHeader"/>
 		</content>
 		<footer>
